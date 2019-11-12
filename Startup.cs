@@ -1,4 +1,4 @@
-using myLibary.Data;
+using myLibrary.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 
-namespace myLibary
+namespace myLibrary
 {
     public class Startup
     {
@@ -28,7 +28,7 @@ namespace myLibary
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<myLibaryContext>(options => options.UseSqlite(Configuration.GetConnectionString("myLibraryContext")));
+            services.AddDbContext<myLibraryContext>(options => options.UseSqlite(Configuration.GetConnectionString("myLibraryContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

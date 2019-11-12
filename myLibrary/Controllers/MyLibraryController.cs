@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace myLibary.Controllers
+namespace myLibrary.Controllers
 {
-    public class MyLibaryController : Controller
+    public class MyLibraryController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
