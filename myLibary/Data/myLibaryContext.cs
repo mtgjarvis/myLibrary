@@ -1,10 +1,15 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using myLibary.Models;
+
 namespace myLibary.Data
 {
-    public class myLibaryContext
+    public class myLibaryContext : DbContext
     {
-        public myLibaryContext()
+        public myLibaryContext(DbContextOptions<myLibaryContext> options)
+            : base(options)
         {
         }
+
+        public DbSet<Book> Book { get; set; }
     }
 }
