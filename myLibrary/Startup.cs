@@ -26,6 +26,7 @@ namespace myLibrary
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            IMvcBuilder mvcBuilder = services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddControllersWithViews();
 
             services.AddDbContext<myLibraryContext>(options =>
@@ -52,11 +53,11 @@ namespace myLibrary
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
+                routes.MapRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
