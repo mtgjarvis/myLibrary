@@ -28,7 +28,8 @@ namespace myLibrary
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<myLibraryContext>(options => options.UseSqlite(Configuration.GetConnectionString("myLibraryContext")));
+            services.AddDbContext<myLibraryContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("myLibraryContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
